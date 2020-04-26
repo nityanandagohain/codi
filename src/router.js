@@ -6,10 +6,12 @@ import Home from '@/views/Home';
 import Login from '@/views/Login';
 import SignUp from '@/views/SignUp';
 import UploadImage from '@/views/UploadImage'
+import Buy from '@/views/buyKit'
 
 Vue.use(Router);
 
 const router = new Router({
+    mode: "history",
     routes: [{
             path: '*',
             redirect: '/login'
@@ -43,7 +45,15 @@ const router = new Router({
             meta: {
                 requiresAuth: true
             }
-        }
+        },
+        {
+            path: '/buy',
+            name: 'Buy',
+            component: Buy,
+            meta: {
+                requiresAuth: true
+            }
+        },
     ]
 });
 
