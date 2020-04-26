@@ -3,6 +3,10 @@
     <HelloWorld msg="Welcome to CODI"/>
     <button @click="uploadimage">Upload Test Results</button>
     <br>
+    <br>
+    <button @click="buyKit">Buy Kit</button>
+    <br>
+    <br>
     <button @click="logout">Logout</button>
   </div>
 </template>
@@ -25,7 +29,11 @@ export default {
     },
     uploadimage: function() {
       this.$router.replace('uploadimage')
-    }
+    },
+    buyKit: function() {
+      this.$router.push({ path: "/buy" });
+    },
+    
   }
 }
 </script>
