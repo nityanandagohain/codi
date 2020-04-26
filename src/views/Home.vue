@@ -1,9 +1,14 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to CODI"/>
-    <button @click="uploadimage">Upload Test Results</button>
-    <br>
-    <button @click="logout">Logout</button>
+    <div class="container">
+      <HelloWorld/>
+      <b-list-group>
+        <b-list-group-item>Take the Questionare and get a personalized kit <router-link to="/uploadimage">here</router-link>. </b-list-group-item>
+        <b-list-group-item>Upload the image of the test kit and get the result <router-link to="/uploadimage">link</router-link>.</b-list-group-item>
+      </b-list-group>
+      <br>
+      <button @click="logout">Logout</button>
+    </div>
   </div>
 </template>
 
