@@ -97,6 +97,8 @@ export default {
             });
             this.quantity=1;
             this.address ="";
+            alert("Order has been placed!")
+            this.$router.push({ path: "/home" });
         }
         else 
         {
