@@ -52,6 +52,7 @@
 
 <script>
 import firebase from "firebase";
+import { store } from "../store.js";
 export default {
   data() {
     return {
@@ -107,7 +108,9 @@ export default {
       this.quantity = 1;
       this.address = "";
       alert("Thank you for taking the questionaire!");
+      store.state.doneQ = true;
       this.$router.push({ path: "/home" });
+
     },
     onReset(evt) {
       evt.preventDefault();

@@ -51,6 +51,7 @@
 
 <script>
 import firebase from "firebase";
+import { store } from "../store.js";
 export default {
 
     data() {
@@ -98,6 +99,7 @@ export default {
             this.quantity=1;
             this.address ="";
             alert("Order has been placed!")
+            store.state.doneB = true;
             this.$router.push({ path: "/home" });
         }
         else 

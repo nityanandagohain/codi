@@ -34,7 +34,7 @@
 
 <script>
 import firebase from "firebase";
-
+import { store } from "../store.js";
 export default {
   name: "uploadimage",
   data() {
@@ -55,6 +55,7 @@ export default {
 
     onUpload() {
       this.showProgressBar = true
+      store.state.doneU = true;
       this.picture = null;
       const storageRef = firebase
         .storage()
