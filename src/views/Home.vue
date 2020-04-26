@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+
     <HelloWorld msg="Welcome to CODI"/>
     <button @click="uploadimage">Upload Test Results</button>
     <br>
@@ -8,6 +9,7 @@
     <br>
     <br>
     <button @click="logout">Logout</button>
+
   </div>
 </template>
 
