@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="container">
     <div>
       <h3>Upload your Test Kit image to know the results:</h3>
       <input type="file" @change="previewImage" accept="image/*" />
     </div>
-    <div>
+    <div v-if="showProgressBar!=false">
       <p>
         Progress: {{uploadValue.toFixed()+"%"}}
         <progress
@@ -33,6 +33,7 @@ export default {
   name: "uploadimage",
   data() {
     return {
+      showProgressBar: false,
       imageData: null,
       picture: null,
       uploadValue: 0,
@@ -47,6 +48,7 @@ export default {
     },
 
     onUpload() {
+      this.showProgressBar = true
       this.picture = null;
       const storageRef = firebase
         .storage()
@@ -68,6 +70,7 @@ export default {
             this.picture = url;
           }).then(()=>{
               this.covidResult = !Math.round(Math.random());
+              this.showProgressBar = false
           });
         }
       );

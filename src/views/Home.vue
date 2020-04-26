@@ -1,14 +1,24 @@
 <template>
-  <div class="home">
+  <div class="container">
 
     <HelloWorld msg="Welcome to CODI"/>
     <br>
-    <button @click="questionaire">Take the questionaire.</button>
+    <h3>Simplified Covid19 detection in three simple steps.</h3>
     <br>
-    <button @click="buyKit">Buy Kit</button>
-    <br>
-    <button @click="uploadimage">Upload Test Results</button>
-    <br>
+    <b-container class="text-left">
+      <b-row >
+        <b-col md="8"><div class="pad">1) Take the Questionare</div> </b-col>
+        <b-col md="2"><router-link to="/questionaire">Here</router-link></b-col>
+      </b-row>
+      <b-row>
+        <b-col md="8"><div class="pad">2) Buy the test kit </div></b-col>
+        <b-col md="2"><router-link to="/buy">Here</router-link></b-col>
+      </b-row>
+      <b-row>
+        <b-col md="8"><div class="pad">3) Upload the image of the Test Kit for results</div> </b-col>
+        <b-col md="2"><router-link to="/uploadimage">Here</router-link></b-col>
+      </b-row>
+    </b-container>
     <br>
     <button @click="logout">Logout</button>
 
@@ -31,15 +41,14 @@ export default {
         this.$router.replace('login')
       })
     },
-    uploadimage: function() {
-      this.$router.replace('uploadimage')
-    },
-    buyKit: function() {
-      this.$router.push({ path: "/buy" });
-    },
-    questionaire: function(){
-      this.$router.push({ path: "/questionaire" });
-    }
   }
 }
 </script>
+
+<style scoped>
+.pad {
+  margin-left: 15em;
+  font-size: 20px;
+  font-weight: 300;
+}
+</style>
