@@ -15,6 +15,17 @@
         <b-form-select id="input-3" v-model="form.age" :options="agevalues" required></b-form-select>
       </b-form-group>
 
+
+      <!-- Contact -->
+      <b-form-group id="input-group-2" label="Were you in close contact with anyone who tested positive?" label-for="input-2">
+        <b-form-select id="input-3" v-model="form.contact" :options="yesno" required></b-form-select>
+      </b-form-group>
+
+       <!-- Travel-->
+      <b-form-group id="input-group-2" label="Have you travelled outside the currently recently?" label-for="input-2">
+        <b-form-select id="input-3" v-model="form.travel" :options="yesno" required></b-form-select>
+      </b-form-group>
+
       <!-- date of first occurence -->
       <b-form-group id="input-group-3" label="Date of first symptom:" label-for="input-3">
         <b-form-datepicker
@@ -48,7 +59,10 @@ export default {
         havesymptoms: "no",
         age: null,
         date_of_first_symptom: null,
-        symptoms: []
+        symptoms: [],
+        contact: "",
+        travel: ""
+
       },
       symptoms: [
         { text: "Fever", value: "fever" },
@@ -80,7 +94,9 @@ export default {
           havesymptoms: this.form.havesymptoms,
           age: this.form.age,
           date_of_first_symptom: this.form.date_of_first_symptom,
-          symptoms: this.symptoms
+          symptoms: this.form.symptoms,
+          contact: this.form.contact,
+          travel: this.form.travel
         })
         .then(function(docRef) {
           console.log("Document written with ID: ", docRef.id);
