@@ -4,6 +4,7 @@
       <h3>Upload your Test Kit image to know the results:</h3>
       <input type="file" @change="previewImage" accept="image/*" />
     </div>
+    <br>
     <div v-if="showProgressBar!=false">
       <p>
         Progress: {{uploadValue.toFixed()+"%"}}
@@ -18,7 +19,12 @@
       <img class="preview" :src="picture" />
       <br />
         <div v-if="covidResult!=null">
-            <p>Your Covid19 test result is</p><h1>{{covidResult}}</h1> 
+            <div v-if="covidResult!=true">
+              <p>Your Covid19 test result is</p> <h3>Negative</h3>.
+            </div> 
+            <div v-if="covidResult">
+              <p>Your Covid19 test result is</p> <h3>Positive</h3>.
+            </div> 
         </div>
       <button @click="onUpload">Upload</button>
     </div>
