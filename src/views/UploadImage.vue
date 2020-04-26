@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <p>Upload your testkit image to Firebase:</p>
+      <h3>Upload your Test Kit image to know the results:</h3>
       <input type="file" @change="previewImage" accept="image/*" />
     </div>
     <div>
@@ -17,7 +17,9 @@
     <div v-if="imageData!=null">
       <img class="preview" :src="picture" />
       <br />
-        <p>Your Covid test result is</p><h1>{{covidResult}}</h1> 
+        <div v-if="covidResult!=null">
+            <p>Your Covid19 test result is</p><h1>{{covidResult}}</h1> 
+        </div>
       <button @click="onUpload">Upload</button>
     </div>
   </div>
