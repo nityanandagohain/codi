@@ -7,6 +7,7 @@ import Login from '@/views/Login';
 import SignUp from '@/views/SignUp';
 import UploadImage from '@/views/UploadImage'
 import Buy from '@/views/buyKit'
+import Questionaire from '@/views/Questionaire'
 
 Vue.use(Router);
 
@@ -50,6 +51,14 @@ const router = new Router({
             path: '/buy',
             name: 'Buy',
             component: Buy,
+            meta: {
+                requiresAuth: true
+            }
+        },
+        {
+            path: '/questionaire',
+            name: 'Questionaire',
+            component: Questionaire,
             meta: {
                 requiresAuth: true
             }
