@@ -17,7 +17,7 @@
     <div v-if="imageData!=null">
       <img class="preview" :src="picture" />
       <br />
-        <p>Your Covid test result is <h1>{{covidResult}}</h1></p>
+        <p>Your Covid test result is</p><h1>{{covidResult}}</h1> 
       <button @click="onUpload">Upload</button>
     </div>
   </div>
