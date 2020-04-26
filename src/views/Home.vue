@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to CODI"/>
+    <button @click="uploadimage">Upload Test Results</button>
+    <br>
     <button @click="logout">Logout</button>
   </div>
 </template>
@@ -20,6 +22,9 @@ export default {
       firebase.auth().signOut().then(() => {
         this.$router.replace('login')
       })
+    },
+    uploadimage: function() {
+      this.$router.replace('uploadimage')
     }
   }
 }
